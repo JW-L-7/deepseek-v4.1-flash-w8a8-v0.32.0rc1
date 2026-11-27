@@ -28,6 +28,13 @@ export MOONCAKE_OFFLOAD_BUCKET_MAX_TOTAL_SIZE=${{70 * 1024 * 1024 * 1024}}
 export MOONCAKE_OFFLOAD_BUCKET_EVICTION_POLICY="lru"
 export MOONCAKE_OFFLOAD_LOCAL_BUFFER_SIZE_BYTES=1073741824
 
+echo 3 > /proc/sys/vm/drop_caches
+echo 300000 > /proc/sys/vm/nr_hugepages
+
+export MC_STORE_USE_HUGEPAGE=1
+export MC_STORE_HUGEPAGE_SIZE=2MB
+
+
 
 vllm serve "$MODEL_PATH" \
     --device-ids "$1" \
