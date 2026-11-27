@@ -1,0 +1,11 @@
+{
+    "metadata_server": "P2PHANDSHAKE",
+    "protocol": "ascend",
+    "device_name": "",
+    "master_server_address": "172.16.1.73:50088",
+    "global_segment_size": "60GB",
+    "enable_ssd_offload": true,
+    "ssd_offload_path": "/nvme/mooncake_offload",
+    "tenant_id": "default"
+}
+
